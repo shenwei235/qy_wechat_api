@@ -14,6 +14,10 @@ module QyWechatApi
         def http_get(url, params={})
           request_url = "#{base_url}/#{url}"
           params = params.merge({access_token: access_token})
+          Rails.logger.info "tttttttt"
+          Rails.logger.info request_url
+          Rails.logger.info params
+          Rails.logger.info "tttttttt"
           QyWechatApi.http_get_without_token(request_url, params )
         end
 
